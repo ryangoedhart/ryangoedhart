@@ -51,7 +51,7 @@ The 3 split repos (`r2d2-platform`, `trading-command-center`, `vps-infrastructur
 
 ## 🤖 What R2D2 does
 
-R2D2 is my AI teammate. It runs 24/7 on the same VPS as TCC. It:
+R2D2 is the AI teammate. It runs 24/7 on the same VPS as TCC. It:
 
 - **Coordinates trading research** — decides what to backtest, what to deny, what to promote
 - **Maintains long-term memory** — pgvector for facts, GBrain for graph, LanceDB for sessions, wiki for syntheses
@@ -63,18 +63,6 @@ The TCC bots (research, backtest, orchestrator, paper, maintenance) do the actua
 trading work. R2D2 is the coordinator that orchestrates them and surfaces the
 narrative to me.
 
----
-
-## 📊 Current focus (June 2026)
-
-- ✅ **TCC bots stable** — 317 tests passing, paper-trading clean state
-- ✅ **Memory pipeline** hardened — 14 bugs fixed across 4 audits, watchdog with runaway detector
-- ✅ **VPS CPU 100% incident** resolved (PGLite index corruption + watchdog conflict)
-- ✅ **GitHub production-level** — 1 monorepo, CI on every push, Dependabot weekly, issue/PR templates, CODEOWNERS
-- ✅ **R2 Suite** — one umbrella name for the whole stack
-
----
-
 ## 🛠️ Tech I work with
 
 - **AI/runtime:** OpenClaw, R2D2, MiniMax-M3, K2.6, OpenAI, Anthropic
@@ -82,14 +70,6 @@ narrative to me.
 - **Infra:** Docker, Docker Compose, Traefik, SearXNG, nginx, Node 22
 - **Memory:** pgvector, LanceDB, GBrain (pgvector + graph), wiki
 - **Languages:** Python, TypeScript, shell, a little Go
-
----
-
-## 📫 Find me
-
-- **Trading site:** [trading.r2d2.world](https://trading.r2d2.world)
-- **R2D2:** [r2d2.world](https://r2d2.world)
-- **Source code:** [github.com/ryangoedhart/r2-suite](https://github.com/ryangoedhart/r2-suite)
 
 ---
 

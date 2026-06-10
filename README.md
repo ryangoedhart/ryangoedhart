@@ -1,6 +1,6 @@
 # ЯR2 
 
-> building **R2 Suite**, a coordinated set of
+> building **ЯR2**, a coordinated set of
 > services that turn trading research into a 24/7 lab
 
 - 🌍 Austin, TX
@@ -10,7 +10,7 @@
 
 ---
 
-## 🛸 The R2 Suite
+## 🛸 The ЯR2 Suite
 
 **One monorepo. Three layers. One VPS.**
 

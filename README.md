@@ -1,12 +1,12 @@
-# Ryan Goedhart 🤖
+# ЯR2 
 
-> **AI-augmented day trader** building **R2 Suite**, a coordinated set of
-> services that turn trading research into a 24/7 lab.
+> building **R2 Suite**, a coordinated set of
+> services that turn trading research into a 24/7 lab
 
-- 🌍 Austin, TX (America/Chicago)
-- 📈 Day trader (active 8AM–8PM CT)
-- 🛠️ Building: [R2 Suite](#-the-r2-suite) — a monorepo on top of OpenClaw + R2D2
-- 🎯 North star: ship only when there's a real bottleneck, scale the lab when it earns its keep
+- 🌍 Austin, TX
+- 📈 Day trader/Student 
+- 🛠️ Building: [R2 Suite](#-the-r2-suite) — A fully autonomous trading pipeline that trades LIVE money, 
+  [R2 Research] - A suite of bots that do deep research on various subjects in regards to the stock market. Some examples include having the bot learn ICT methods of thinking in the stock market, and try to apply it to its own stratagies it makes, and send it to our trading project
 
 ---
 

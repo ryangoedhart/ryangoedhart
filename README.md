@@ -1,49 +1,55 @@
 # Ryan Goedhart 🤖
 
-> **AI-augmented day trader** building R2D2, a multi-agent research platform
-> that turns my trading research into a 24/7 lab.
+> **AI-augmented day trader** building **R2 Suite**, a coordinated set of
+> services that turn trading research into a 24/7 lab.
 
 - 🌍 Austin, TX (America/Chicago)
 - 📈 Day trader (active 8AM–8PM CT)
-- 🛠️ Building: [R2D2](#-the-r2d2-platform) — a coordinator + sub-agent system on top of OpenClaw
-- 🎯 North star: scale multi-agent research and trading support, ship only when there's a real bottleneck
+- 🛠️ Building: [R2 Suite](#-the-r2-suite) — a monorepo on top of OpenClaw + R2D2
+- 🎯 North star: ship only when there's a real bottleneck, scale the lab when it earns its keep
 
 ---
 
-## 🛸 The R2D2 Platform
+## 🛸 The R2 Suite
 
-Three repos, one VPS, one mission: turn ideas into validated trading strategies.
+**One monorepo. Three layers. One VPS.**
 
-| Repo | What | Stack |
+| Repo | What | Status |
 |---|---|---|
-| **[r2d2-platform](https://github.com/ryangoedhart/r2d2-platform)** | The R2D2 AI runtime + OpenClaw workspace | OpenClaw, R2D2 agent, pgvector, LanceDB, GBrain, Obsidian-style wiki |
-| **[trading-command-center](https://github.com/ryangoedhart/trading-command-center)** | TCC — 24/7 trading research lab | FastAPI, 5 supervised bots, PostgreSQL, Redis, Vibe-Trading, tradingagents |
-| **[vps-infrastructure](https://github.com/ryangoedhart/vps-infrastructure)** | VPS plumbing + master inventory | Docker Compose, Traefik, SearXNG |
+| **[ryangoedhart/r2-suite](https://github.com/ryangoedhart/r2-suite)** | R2 Suite monorepo — OpenClaw workspace + R2D2 platform + Trading Command Center + VPS infrastructure | 🟢 Active |
 
-### How they fit together
+The 3 split repos (`r2d2-platform`, `trading-command-center`, `vps-infrastructure`) were merged into the monorepo on 2026-06-10 and are now archived.
+
+### How the pieces fit together
 
 ```
    Internet (HTTPS)
         │
         ▼
-   Traefik  ──────────────────────────  vps-infrastructure
+   Traefik  ──────────────────────  vps-infrastructure (in monorepo)
         │
-        ├── r2d2.world  ──────────────►  r2d2-gateway (nginx + Node)  ─┐
-        │                                                                   ├─ r2d2-platform
-        └── trading.r2d2.world  ──────►  tcc-app (FastAPI + 5 bots)  ────┘
+        ├── r2d2.world  ─────────►  r2d2-gateway (nginx + Node)
+        │                            ▲
+        │                            │
+        │                            └─ openclaw-goll  ◄── r2d2-platform (in monorepo)
+        │                                 │
+        │                                 │ (R2D2 the AI reads AGENTS.md,
+        │                                 │  SOUL.md, MEMORY.md from the
+        │                                 │  monorepo root)
+        │                                 │
+        │                                 ▼
+        │                            tcc-app (FastAPI + 5 bots)
+        │                                 │
+        └── trading.r2d2.world ──►       ├── tcc-db (postgres 16)
+                                         └── tcc-redis (redis 7)
+                                          ▲
                                           │
-                                          ├── tcc-db (postgres)
-                                          └── tcc-redis (cache)
+                            trading-command-center (in monorepo)
 ```
-
-- **`r2d2.world`** — R2D2's front door. Static landing page + AI status JSON.
-- **`trading.r2d2.world`** — TCC's control UI + dashboard.
-- **`traefik.r2d2.world`** — Traefik dashboard (basic-auth).
-- All orchestrated by Traefik (from `vps-infrastructure`).
 
 ---
 
-## 🤖 What R2D2 does (the short version)
+## 🤖 What R2D2 does
 
 R2D2 is my AI teammate. It runs 24/7 on the same VPS as TCC. It:
 
@@ -61,10 +67,11 @@ narrative to me.
 
 ## 📊 Current focus (June 2026)
 
-- **TCC bots stable**, 300+ tests passing, paper-trading clean state
-- **Memory pipeline** hardened — 14 bugs fixed across 4 audits, watchdog with runaway detector
-- **VPS CPU 100% incident** resolved (PGLite index corruption + watchdog conflict)
-- **GitHub restructured** — three clean repos with production READMEs, descriptions, topics
+- ✅ **TCC bots stable** — 317 tests passing, paper-trading clean state
+- ✅ **Memory pipeline** hardened — 14 bugs fixed across 4 audits, watchdog with runaway detector
+- ✅ **VPS CPU 100% incident** resolved (PGLite index corruption + watchdog conflict)
+- ✅ **GitHub production-level** — 1 monorepo, CI on every push, Dependabot weekly, issue/PR templates, CODEOWNERS
+- ✅ **R2 Suite** — one umbrella name for the whole stack
 
 ---
 
@@ -82,6 +89,7 @@ narrative to me.
 
 - **Trading site:** [trading.r2d2.world](https://trading.r2d2.world)
 - **R2D2:** [r2d2.world](https://r2d2.world)
+- **Source code:** [github.com/ryangoedhart/r2-suite](https://github.com/ryangoedhart/r2-suite)
 
 ---
 
